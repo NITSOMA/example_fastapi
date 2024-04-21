@@ -7,7 +7,7 @@ from sqlalchemy.sql.expression import text
 
 
 class Post(Base):
-    # first what we wanna call table
+    
     __tablename__ = "posts"
     
     id = Column(Integer, primary_key=True, nullable=False)

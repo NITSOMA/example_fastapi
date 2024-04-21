@@ -8,7 +8,7 @@ class UserOut(BaseModel):
     email: EmailStr
     created_at: datetime
 
-# ჩვენი მონაცემების მოდელის ჩონჩხი
+
 class Post(BaseModel):
     id: int
     title: str
@@ -32,7 +32,7 @@ class PostResponse(Post):
     created_at: datetime
     
 
-# schema for users registration
+
 
 class UserCreate(BaseModel):
     email: EmailStr

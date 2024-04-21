@@ -7,13 +7,12 @@ from .config import settings
 
 from fastapi.middleware.cors import CORSMiddleware
 
-origins = ['https://www.google.com'] # რომელი დომეინიდან შესაძლოა მოსწვდე შენს ეიფიაის
-# თუ გინდა ყველა მოსწვდეს * ამას უთითებ და ამ შემთხვევაში ყველა მისწვდება 
+origins = ["*"]
 app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
+    allow_origins= origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

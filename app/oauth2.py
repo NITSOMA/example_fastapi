@@ -8,9 +8,6 @@ from .config import settings
 
 oauth_scheme = OAuth2PasswordBearer(tokenUrl='login')
 
-# secret_key 
-# algorithm
-# experation_time
 
 
 SECRET_KEY = settings.secret_key
@@ -18,12 +15,12 @@ ALGORITHM = settings.algorithm
 ACCESS_TOKEN_EXPIRE_MINUTES = settings.access_token_expire_minutes
 
 
-def create_acces_token(data: dict): #data is just a payload that we should decide and provide
-    to_encode = data.copy() # so this is payload part
+def create_acces_token(data: dict): 
+    to_encode = data.copy() 
     expire = datetime.now(tz=timezone.utc) + timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
-    to_encode.update({"exp": expire}) # so this is payload part
+    to_encode.update({"exp": expire})
     encoded_jwt = jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
-    return encoded_jwt # ეს დააბრუნებს ჩვენს ტოკენს
+    return encoded_jwt 
     
     
     
